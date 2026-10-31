@@ -151,11 +151,10 @@
     state.map = L.map('map', { scrollWheelZoom: false }).setView([3.14, 101.69], 6);
     const osmAttr = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
     const base = {
-      'Streets (Carto)': L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19, attribution: osmAttr + ' © <a href="https://carto.com/attributions">CARTO</a>' }),
       'OpenStreetMap': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: osmAttr }),
       'Satellite (Esri)': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 18, attribution: 'Tiles © Esri' }),
     };
-    base['Streets (Carto)'].addTo(state.map);
+    base['OpenStreetMap'].addTo(state.map);
     L.control.layers(base, null, { position: 'topright' }).addTo(state.map);
   }
 
